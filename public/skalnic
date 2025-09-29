@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.skalničky.cz - Stránky pro pěstitele skalniček a alpínek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #f8faf8 0%, #f0f4f0 100%);
+            color: #2d4a2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            border-bottom: 4px solid #ff6b35;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-section h1 {
+            font-size: 2.5rem;
+            color: #2d4a2d;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .title-section p {
+            font-size: 0.9rem;
+            color: #666;
+            max-width: 600px;
+        }
+
+        .flag {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid #1e40af;
+            background: linear-gradient(45deg, #dc2626 50%, white 50%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flag::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 40px 0 40px 40px;
+            border-color: transparent transparent transparent #1e40af;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .section {
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .orange-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            color: #2d4a2d;
+        }
+
+        .green-section {
+            background: linear-gradient(135deg, #22c55e 0%, #65a30d 100%);
+            color: white;
+        }
+
+        .quote {
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .quote strong {
+            font-weight: bold;
+        }
+
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .nav-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .title {
+            font-weight: bold;
+            display: block;
+        }
+
+        .nav-button .subtitle {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .alpine-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+
+        .rock-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+
+        .content-box {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-box h4 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .content-box p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .title-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="title-section">
+                <h1>www.skalničky.cz</h1>
+                <p>Stránky určené všem pěstitelům a milovníkům skalniček, cibulovin, alpínek, bylinných, travinatých, stepních a bajinných rostlin a zakrslých okrasných dřevin...</p>
+            </div>
+            <div class="flag"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-grid">
+            <!-- Left Orange Section -->
+            <div class="section orange-section">
+                <div class="quote">
+                    <strong>Obejmi pohledem oblaka,</strong><br>
+                    <strong>vypěstuj květinu,</strong><br>
+                    <strong>zasaď strom</strong><br>
+                    <strong>a pohlaď kámen.</strong><br>
+                    <strong>Vysoko ve skalách</strong><br>
+                    <strong>ochutnej pramen.</strong><br>
+                    <strong>Poznáš, že žiješ...</strong>
+                </div>
+
+                <nav>
+                    <a href="#" class="nav-button">
+                        <span class="title">Výstavy a akce</span>
+                        <span class="subtitle">Exhibitions & Events</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Zajímavé rostliny</span>
+                        <span class="subtitle">Interesting Plants</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Nejen pro začátečníky</span>
+                        <span class="subtitle">Not Just for Beginners</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Skalky pro inspiraci</span>
+                        <span class="subtitle">Rock Gardens for Inspiration</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Může vás zajímat</span>
+                        <span class="subtitle">You Might Be Interested</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Ze světa hor</span>
+                        <span class="subtitle">From the World of Mountains</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Adresy pěstitelů</span>
+                        <span class="subtitle">Growers' Addresses</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">Adresy klubů</span>
+                        <span class="subtitle">Club Addresses</span>
+                    </a>
+                    <a href="#" class="nav-button">
+                        <span class="title">O nás pro Vás</span>
+                        <span class="subtitle">About Us for You</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Center Green Section -->
+            <div class="section green-section">
+                <div class="image-container">
+                    <div class="alpine-image" style="background: linear-gradient(45deg, #8b5cf6, #06b6d4); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Alpine Flowers</div>
+                    <p style="font-size: 0.9rem;">
+                        Krokusy, nebo také šafrány, jsou především jedny z prvních jarních květů v zahradě. Tak proč o nich je zmínka právě nyní na podzim? Protože právě nyní je můžete údělat velkou jarní podívanou.
+                    </p>
+                    <a href="#" class="button">Jakou?</a>
+                </div>
+
+                <div class="image-container">
+                    <div class="rock-image" style="background: linear-gradient(45deg, #059669, #0d9488); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Rock Garden</div>
+                    <p style="font-size: 0.9rem;">
+                        Poznali byste odkud je tato fotografie? Z přírody nebo ze zahrady? Prozradí vám to <strong>naše galerie</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Orange Section -->
+            <div class="section orange-section">
+                <div class="content-box">
+                    <h4>Vážení přátelé, dobrý den</h4>
+                    <p>(či noc), je hezké, že máte zájem o skalničky a vše, co s nimi souvisí. Otevřeli jste některou webové stránky pro české i slovenské pěstitele skalniček.</p>
+                </div>
+
+                <div class="content-box">
+                    <h4>Poslední aktualizace</h4>
+                    <p style="text-align: center; font-weight: bold;">19.9.2025</p>
+                    <p>Jen pro zajímavost: provoz těchto stránek pro skalničkáře byl zahájen 1.3.2000</p>
+                </div>
+
+                <div class="content-box">
+                    <h4>Sdělení pro zájemce o výměnu semen skalniček</h4>
+                    <a href="#" class="button">Jak na to?</a>
+                </div>
+
+                <div class="content-box">
+                    <h4>Alpinum klub Plzeň</h4>
+                    <p>vydal novou knihu pro skalničkáře. Více informací o knize</p>
+                    <a href="#" class="button">ROK V ALPÍNU</a>
+                </div>
+
+                <div class="content-box">
+                    <h4>LEXIKON SKALNIČEK</h4>
+                    <p>Představujeme vám rozsáhlý lexikon v neobvyklém provedení.</p>
+                    <a href="#" class="button">Více o něm zde</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
