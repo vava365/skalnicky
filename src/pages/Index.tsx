@@ -5,18 +5,6 @@ import czechFlag from "@/assets/czech-flag.jpg";
 import rockGarden from "@/assets/rock-garden.jpg";
 
 const Index = () => {
-  const navigationItems = [
-    { title: "Výstavy a akce", subtitle: "Exhibitions & Events" },
-    { title: "Zajímavé rostliny", subtitle: "Interesting Plants" },
-    { title: "Nejen pro začátečníky", subtitle: "Not Just for Beginners" },
-    { title: "Skalky pro inspiraci", subtitle: "Rock Gardens for Inspiration" },
-    { title: "Může vás zajímat", subtitle: "You Might Be Interested" },
-    { title: "Ze světa hor", subtitle: "From the World of Mountains" },
-    { title: "Adresy pěstitelů", subtitle: "Growers' Addresses" },
-    { title: "Adresy klubů", subtitle: "Club Addresses" },
-    { title: "O nás pro Vás", subtitle: "About Us for You" },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/50 to-accent/20">
       {/* Floating particles background */}
@@ -75,18 +63,78 @@ const Index = () => {
               </div>
 
               <div className="space-y-4">
-                {navigationItems.map((item, index) => (
-                  <Button
-                    key={index}
-                    variant="outline"
-                    className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm"
-                  >
+                <a href="/vystavy">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
                     <div>
-                      <div className="font-semibold text-base">{item.title}</div>
-                      <div className="text-xs opacity-80">{item.subtitle}</div>
+                      <div className="font-semibold text-base">Výstavy a akce</div>
+                      <div className="text-xs opacity-80">Exhibitions & Events</div>
                     </div>
                   </Button>
-                ))}
+                </a>
+                <a href="/rostliny">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Zajímavé rostliny</div>
+                      <div className="text-xs opacity-80">Interesting Plants</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/zacatecnici">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Nejen pro začátečníky</div>
+                      <div className="text-xs opacity-80">Not Just for Beginners</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/inspirace">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Skalky pro inspiraci</div>
+                      <div className="text-xs opacity-80">Rock Gardens for Inspiration</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/zajimavosti">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Může vás zajímat</div>
+                      <div className="text-xs opacity-80">You Might Be Interested</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/hory">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Ze světa hor</div>
+                      <div className="text-xs opacity-80">From the World of Mountains</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/pestit">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Adresy pěstitelů</div>
+                      <div className="text-xs opacity-80">Growers' Addresses</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/klub">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">Adresy klubů</div>
+                      <div className="text-xs opacity-80">Club Addresses</div>
+                    </div>
+                  </Button>
+                </a>
+                <a href="/onas">
+                  <Button variant="outline" className="w-full text-left bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-lg backdrop-blur-sm">
+                    <div>
+                      <div className="font-semibold text-base">O nás pro Vás</div>
+                      <div className="text-xs opacity-80">About Us for You</div>
+                    </div>
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -160,9 +208,11 @@ const Index = () => {
               <div className="space-y-6">
                 <div className="bg-white/20 rounded-xl p-6 border border-white/30 backdrop-blur-sm shadow-lg hover:bg-white/30 transition-all duration-200">
                   <h4 className="font-bold mb-3 text-lg">Sdělení pro zájemce o výměnu semen skalniček</h4>
-                  <Button variant="outline" className="bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200">
-                    Jak na to?
-                  </Button>
+                  <a href="/vystavy">
+                    <Button variant="outline" className="bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200">
+                      Jak na to?
+                    </Button>
+                  </a>
                 </div>
 
                 <div className="bg-white/20 rounded-xl p-6 border border-white/30 backdrop-blur-sm shadow-lg hover:bg-white/30 transition-all duration-200">
@@ -170,9 +220,11 @@ const Index = () => {
                   <p className="text-sm mb-4 leading-relaxed">
                     vydal novou knihu pro skalničkáře. Více informací o knize
                   </p>
-                  <Button variant="outline" className="bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200">
-                    ROK V ALPÍNU
-                  </Button>
+                  <a href="/rok-v-alpinu">
+                    <Button variant="outline" className="bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200">
+                      ROK V ALPÍNU
+                    </Button>
+                  </a>
                 </div>
 
                 <div className="bg-white/20 rounded-xl p-6 border border-white/30 backdrop-blur-sm shadow-lg hover:bg-white/30 transition-all duration-200">
@@ -180,9 +232,11 @@ const Index = () => {
                   <p className="text-sm mb-4 leading-relaxed">
                     Představujeme vám rozsáhlý lexikon v neobvyklém provedení.
                   </p>
-                  <Button variant="outline" className="bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200">
-                    Více o něm zde
-                  </Button>
+                  <a href="/lexikon">
+                    <Button variant="outline" className="bg-white/20 border-white/30 text-alpine-orange-foreground hover:bg-white/30 hover:scale-105 transition-all duration-200">
+                      Více o něm zde
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
