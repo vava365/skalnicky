@@ -14,14 +14,16 @@ const Beginners = () => {
           <section>
             <h2 className="text-2xl font-semibold text-mountain-dark mb-4">Základy pěstování skalniček</h2>
             <p className="text-stone-dark leading-relaxed mb-4">
-              Praktické rady pro začínající skalničkáře - od výběru stanoviště po péči během roku.
+              Praktické rady a tipy nejen pro začínající skalničkáře. Zkušenosti od výběru stanoviště 
+              až po péči během celého roku. Informace o substrátech, zálivce a ochraně rostlin.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-mountain-dark mb-4">Tipy a triky</h2>
+            <h2 className="text-2xl font-semibold text-mountain-dark mb-4">Tipy zkušených pěstitelů</h2>
             <p className="text-stone-dark leading-relaxed">
-              Zkušenosti zkušených pěstitelů, které vám pomohou s úspěšným pěstováním alpínských rostlin.
+              Cenné zkušenosti od dlouholetých pěstitelů skalniček, které vám pomohou vyhnout se 
+              nejčastějším chybám a úspěšně pěstovat alpínské rostliny ve vašich zahradách.
             </p>
           </section>
         </div>

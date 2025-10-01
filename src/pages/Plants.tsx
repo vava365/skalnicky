@@ -12,18 +12,24 @@ const Plants = () => {
         
         <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
           <p className="text-stone-dark leading-relaxed mb-6">
-            Objevte fascinující svět alpínských rostlin. Od drobných skalniček po vzácné horské druhy.
+            Objevte fascinující svět zajímavých rostlin pro skalky. Od drobných alpínských skalniček 
+            po vzácné horské druhy, které ozdobí každou zahradu.
           </p>
           
           <div className="grid gap-6">
-            <div className="border-l-4 border-alpine-green pl-4">
-              <h3 className="text-xl font-semibold text-mountain-dark mb-2">Alpínské rostliny</h3>
-              <p className="text-stone-dark">Rostliny pocházející z vysokohorských oblastí.</p>
+            <div className="border-l-4 border-alpine-green pl-4 p-4 bg-mountain-mist/20 rounded">
+              <h3 className="text-xl font-semibold text-mountain-dark mb-2">Horské rostliny</h3>
+              <p className="text-stone-dark">Rostliny z alpínských oblastí celého světa - od Alp přes Kavkaz až po Himálaje.</p>
             </div>
             
-            <div className="border-l-4 border-alpine-orange pl-4">
+            <div className="border-l-4 border-alpine-orange pl-4 p-4 bg-mountain-mist/20 rounded">
               <h3 className="text-xl font-semibold text-mountain-dark mb-2">Vzácné druhy</h3>
-              <p className="text-stone-dark">Informace o vzácných a chráněných druzích skalniček.</p>
+              <p className="text-stone-dark">Informace o vzácných botanických druzích a jejich pěstování v našich podmínkách.</p>
+            </div>
+
+            <div className="border-l-4 border-alpine-green pl-4 p-4 bg-mountain-mist/20 rounded">
+              <h3 className="text-xl font-semibold text-mountain-dark mb-2">Zajímavé kultivary</h3>
+              <p className="text-stone-dark">Nové a osvědčené kultivary skalniček vhodné pro naše zahrady.</p>
             </div>
           </div>
         </div>
